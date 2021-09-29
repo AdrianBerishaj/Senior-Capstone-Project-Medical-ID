@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name" translatable="false">Medical ID</string>
+    <string name="servicedesc" translatable="false">Description</string>
+    <string name="aiddescription" translatable="false">AID Description</string>
+    <string name="id_label" translatable="false">ID:</string>
+    <string name="nfc_disabled">NFC is disabled. Do you want to enable it?</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="nfc_unsupported">Device does not support NFC? :-(</string>
+    <string name="myButton" translatable="false">Button</string>
+    <string name="password_strength_weak" translatable="false">Weak</string>
+    <string name="password_strength_medium" translatable="false">Medium</string>
+    <string name="password_strength_strong" translatable="false">Strong</string>
+    <string name="password_strength_very_strong" translatable="false">Very Strong</string>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.oaklandstudent.medicalid">
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+
+    <uses-feature
+        android:name="android.hardware.nfc.hce"
+        android:required="true" />
+
+    <uses-feature
+        android:name="android.hardware.fingerprint"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!--<activity android:name=".Questions"></activity>-->
+        <activity android:name="edu.oaklandstudent.medicalid.PersonalInformation" />
+        <activity android:name="edu.oaklandstudent.medicalid.EmergencyContacts" />
+        <activity android:name="edu.oaklandstudent.medicalid.MedicalConditions" />
+        <activity android:name="edu.oaklandstudent.medicalid.AccidentInformation" />
+        <activity android:name="edu.oaklandstudent.medicalid.authFailed" />
+        <activity android:name="edu.oaklandstudent.medicalid.password" />
+        <activity android:name="edu.oaklandstudent.medicalid.Login" />
+        <activity android:name="edu.oaklandstudent.medicalid.Registration"/>
+        <activity android:name="edu.oaklandstudent.medicalid.Credits" />
+        <activity android:name="edu.oaklandstudent.medicalid.About" />
+       <!-- <activity android:name="edu.oaklandstudent.medicalid.AESEncryption" /> -->
+        <activity android:name="edu.oaklandstudent.medicalid.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/nfc_tech_filter" />
+        </activity>
+
+<!--
+
+        <service
+            android:name="edu.oaklandstudent.medicalid.NFC.HostCardEmulatorService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/apduservice" />
+        </service>
+        -->
+
+    </application>
+
+</manifest>
